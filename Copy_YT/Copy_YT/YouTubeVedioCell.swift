@@ -26,6 +26,50 @@ class BaseCell: UICollectionViewCell {
 
 class YouTubeVideoCell: BaseCell {
 
+    var video: Video? {
+        didSet {
+            titleLabel.text = video?.title
+            
+            setupThumbnailImage()
+            
+            //videoThumbnailView.image = UIImage(named: (video?.thumbnailImageName)!)
+            
+            //显示自定义头像
+            if let profileImageName = video?.channel?.profileImageName {
+                userImageView.image = UIImage(named: profileImageName)
+            }
+            
+            if let channelName = video?.channel?.name, let numberOfViews = video?.numberOfViews {
+                
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .decimal
+                //Specifies a decimal style format; for example, 12345678 is represented as “12,345,678”.
+                
+                subtitleTextView.text = "\(channelName) • \(formatter.string(from: numberOfViews)!) views"
+            }
+            
+        }
+    }
+    //什么意思
+    func setupThumbnailImage() {
+        if let thumbnailUrl = video?.thumbnailImageName{
+            let url = URL(string: thumbnailUrl)
+            URLSession.shared.dataTask(with: url!, completionHandler:{(data, response, error) in
+            
+                if error != nil {
+                    print(error)
+                    return
+                }
+                
+                
+                //获取主线程
+                DispatchQueue.main.async{
+                    self.videoThumbnailView.image = UIImage(data: data!)
+                }
+            }).resume()
+        }
+        
+    }
     
     //block
     let videoThumbnailView: UIImageView = {
@@ -41,7 +85,7 @@ class YouTubeVideoCell: BaseCell {
     let userImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.blue
-        imageView.image = UIImage(named: "IMG_6630")
+        imageView.image = UIImage(named: "jzm")
         imageView.layer.cornerRadius = 22
         imageView.layer.masksToBounds = true
         return imageView

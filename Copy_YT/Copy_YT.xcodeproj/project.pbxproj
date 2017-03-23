@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F0D5AC31E73E0FB00245B5A /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D5AC21E73E0FB00245B5A /* MenuBar.swift */; };
+		5F0D5AC61E74F2D600245B5A /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D5AC51E74F2D600245B5A /* Video.swift */; };
 		5F2E77441E6CF67D006AF03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2E77431E6CF67D006AF03D /* AppDelegate.swift */; };
 		5F2E77461E6CF67D006AF03D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2E77451E6CF67D006AF03D /* HomeController.swift */; };
 		5F2E77491E6CF67D006AF03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2E77471E6CF67D006AF03D /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		5F0D5AC21E73E0FB00245B5A /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		5F0D5AC51E74F2D600245B5A /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		5F2E77401E6CF67D006AF03D /* Copy_YT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Copy_YT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2E77431E6CF67D006AF03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F2E77451E6CF67D006AF03D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F0D5AC41E74F2BB00245B5A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5F0D5AC51E74F2D600245B5A /* Video.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		5F2E77371E6CF67D006AF03D = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		5F2E77421E6CF67D006AF03D /* Copy_YT */ = {
 			isa = PBXGroup;
 			children = (
+				5F0D5AC41E74F2BB00245B5A /* model */,
 				5FADACA71E7180E400F65DE4 /* controller */,
 				5FADACA41E71803B00F65DE4 /* views */,
 				5F2FA3A51E6EFAA600DCD0A7 /* Helper */,
@@ -293,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F2FA3A71E6EFAD100DCD0A7 /* Extension.swift in Sources */,
+				5F0D5AC61E74F2D600245B5A /* Video.swift in Sources */,
 				5FADACA61E71805C00F65DE4 /* YouTubeVedioCell.swift in Sources */,
 				5F2E77461E6CF67D006AF03D /* HomeController.swift in Sources */,
 				5F2E77441E6CF67D006AF03D /* AppDelegate.swift in Sources */,
